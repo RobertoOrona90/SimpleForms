@@ -41,15 +41,19 @@
         <div class="w3-container">
               <div class="input-field">
                 <input id="FirstName" name="FirstName" type="text" class="validate" required>
-                <label for="FirstName">First Name</label>
+                <label for="FirstName" maxlength="255">First Name</label>
               </div> 
               <div class="input-field">
                 <input id="MiddleName" name="MiddleName" type="text" class="validate" required>
-                <label for="MiddleName">Middle Name</label>
+                <label for="MiddleName" maxlength="255">Middle Name</label>
               </div>
               <div class="input-field">
-                <input id="Email" name="Email" type="text" 
-                class="validate" required>
+                <input id="LastName" name="LastName" type="text" class="validate" required>
+                <label for="LastName" maxlength="255">Middle Name</label>
+              </div>
+              <div class="input-field">
+                <input id="Email" name="Email" type="email" 
+                class="validate" required maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 <label for="Email">Email</label>
               </div>
               <div class="input-field">
@@ -64,27 +68,27 @@
               </div>
               <div class="input-field">
                 <input id="Address" name="Address" type="text" 
-                class="validate"  required >
+                class="validate"  required maxlength="500">
                 <label for="Address">Address</label>
               </div>
               <div class="input-field">
                 <input id="City" name="City" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="500">
                 <label for="City">City</label>
               </div>
               <div class="input-field">
                 <input id="State" name="State" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="500">
                 <label for="State">State</label>
               </div>
               <div class="input-field">
                 <input id="ZipCode" name="ZipCode" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="10">
                 <label for="ZipCode">ZipCode</label>
               </div>
               <div class="input-field">
                 <input id="Country" name="Country" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="45">
                 <label for="Country">Country</label>
               </div>
               <div class="input-field">
@@ -94,42 +98,42 @@
               </div>
               <div class="input-field">
                 <input id="Sex" name="Sex" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="50">
                 <label for="Sex">Sex</label>
               </div>
               <div class="input-field">
                 <input id="Ethnicity" name="Ethnicity" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="50">
                 <label for="Ethnicity">Ethnicity</label>
               </div>
               <div class="input-field">
                 <input id="HighestSchoolGrade" name="HighestSchoolGrade" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="50">
                 <label for="HighestSchoolGrade">HighestSchoolGrade</label>
               </div>
               <div class="input-field">
                 <input id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" type="text" 
-                class="validate" required>
+                class="validate" required  maxlength="50">
                 <label for="HowDidYouHearAboutUs">HowDidYouHearAboutUs</label>
               </div>
               <div class="input-field">
                 <input id="MigrationProcess" name="MigrationProcess" type="text" 
-                class="validate" required>
+                class="validate" required  maxlength="1">
                 <label for="MigrationProcess">MigrationProcess</label>
               </div>
               <div class="input-field">
                 <input id="Course" name="Course" type="text" 
-                class="validate" required>
+                class="validate" required  maxlength="45">
                 <label for="Course">Course</label>
               </div>
               <div class="input-field">
                 <input id="ClassSchedule" name="ClassSchedule" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="45">
                 <label for="ClassSchedule">ClassSchedule</label>
               </div>
               <div class="input-field">
                 <input id="Mode" name="Mode" type="text" 
-                class="validate" required>
+                class="validate" required maxlength="45">
                 <label for="Mode">Mode</label>
               </div>
               <div class="input-field">
@@ -139,7 +143,7 @@
               </div>
               <div class="input-field">
                 <input id="EgressDate" name="EgressDate" type="text" 
-                class="validate" required>
+                class="validate" required >
                 <label for="EgressDate">EgressDate</label>
               </div>
               <button class="btn waves-effect waves-light" type="submit" name="action">Submit
