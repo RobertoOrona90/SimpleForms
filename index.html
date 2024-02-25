@@ -29,6 +29,15 @@
 
   </script>
   <style>
+    body {
+      background-color: #efeffb
+    }
+
+    .background-card {
+      background-color: white;
+    }
+
+    /* Cuando la pantalla es mayor a 900px  (Laptops and desktops)*/
     @media only screen and (min-width : 901px) {
       .flex-row {
         display: flex;
@@ -39,12 +48,24 @@
       .custom-control {
         width: 30%;
       }
+
+      .margins {
+        padding-top: 1%;
+        padding-left: 15%;
+        padding-right: 15%;
+      }
     }
 
     /* Cuando la pantalla es menor a 900px  (tablets y teléfonos inteligentes)*/
     @media only screen and (max-width : 900px) {
       .custom-control {
         width: 100%;
+      }
+
+      .margins {
+        padding-top: 1%;
+        padding-left: 3%;
+        padding-right: 3%;
       }
     }
 
@@ -81,9 +102,10 @@
 <body>
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  <div style="padding-top: 1%;padding-left: 8%;padding-right: 8%;">
-    <h1>Registro del Estudiante</h1>
-    <div class="w3-card-4">
+  <div class="margins">
+    <img src="images/logo.webp" alt="Italian Trulli">
+    <h3>Registro del Estudiante</h3>
+    <div class="w3-card-4 background-card">
       <form action="test.php">
         <div class="w3-container">
           <div class="flex-row">
@@ -106,7 +128,7 @@
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
               <label for="Email">Correo electrónico</label>
             </div>
-            <div class="input-field">
+            <div class="input-field custom-control">
               <select name="Sex" id="Sex" class="validate" required>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
@@ -130,10 +152,10 @@
               <input id="PhoneNumber2" name="PhoneNumber2" type="text" class="validate" pattern="[0-9]{10}">
               <label for="PhoneNumber2">Número de teléfono fijo (opcional)</label>
             </div>
-          </div>
-          <div class="input-field">
-            <input id="Address" name="Address" type="text" class="validate" required maxlength="500">
-            <label for="Address">Calle y número</label>
+            <div class="input-field custom-control">
+              <input id="Address" name="Address" type="text" class="validate" required maxlength="500">
+              <label for="Address">Calle y número</label>
+            </div>
           </div>
           <div class="flex-row">
             <div class="input-field custom-control">
@@ -170,8 +192,6 @@
               </select>
               <label for="HighestSchoolGrade">Máximo grado de estudios</label>
             </div>
-          </div>
-          <div class="flex-row">
             <div class="input-field custom-control">
               <select id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" required class="validate">
                 <option value="Banner o Manta">Banner o Manta</option>
@@ -188,6 +208,8 @@
               </select>
               <label for="HowDidYouHearAboutUs">¿Cómo te enteraste de nosotros?</label>
             </div>
+          </div>
+          <div class="flex-row">
             <div class="input-field custom-control">
               <select name="MigrationProcess" id="MigrationProcess" class="validate" required>
                 <option value="Si">Si</option>
@@ -196,14 +218,16 @@
               <label for="MigrationProcess">¿Necesitas tus clases como parte de tu proceso de DACA u otro trámite
                 migratorio?</label>
             </div>
+          </div>
+          <div class="flex-row">
             <div class="input-field custom-control">
               <input id="AdmissionDate" name="AdmissionDate" type="text" class="validate" readonly>
               <label for="AdmissionDate">Fecha de Admisión</label>
             </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+              <i class="material-icons right">send</i>
+            </button>
           </div>
-          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button>
         </div>
       </form>
     </div>
