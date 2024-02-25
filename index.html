@@ -99,8 +99,8 @@
               <label for="PhoneNumber">Número de teléfono celular</label>
             </div>
             <div class="input-field">
-              <input id="PhoneNumber2" name="PhoneNumber2" type="text" class="validate" pattern="[0-9]{10}" required>
-              <label for="PhoneNumber2">Segundo Número de teléfono celular</label>
+              <input id="PhoneNumber2" name="PhoneNumber2" type="text" class="validate" pattern="[0-9]{10}">
+              <label for="PhoneNumber2">Número de teléfono fijo (opcional)</label>
             </div>
           </div>
           <div class="input-field">
@@ -127,16 +127,17 @@
               <label for="Country">País</label>
             </div>
           </div>
+          <label for="Sex">Sexo</label>
           <div class="input-field">
-            <select name="Sex" id="Sex" required>
+            <select name="Sex" id="Sex" class="validate" required>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
               <option value="Otro">Otro</option>
             </select>
-            <label for="Sex">Sexo</label>
           </div>
+          <label for="HighestSchoolGrade">Máximo grado de estudios</label>
           <div class="input-field">
-            <select name="HighestSchoolGrade" id="HighestSchoolGrade" required>
+            <select name="HighestSchoolGrade" id="HighestSchoolGrade" class="validate" required>
               <option value="Primaria">Primaria</option>
               <option value="Secundaria">Secundaria</option>
               <option value="Preparatoria/Bachillerato (No terminado)">Preparatoria/Bachillerato (No terminado)</option>
@@ -148,12 +149,22 @@
               <option value="Maestría">Maestría</option>
               <option value="Doctorado">Doctorado</option>
             </select>
-            <label for="HighestSchoolGrade">Máximo grado de estudios</label>
           </div>
+          <label for="HowDidYouHearAboutUs">¿Cómo te enteraste de nosotros?</label>
           <div class="input-field">
-            <input id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" type="text" class="validate" required
-              maxlength="50">
-            <label for="HowDidYouHearAboutUs">¿Cómo te enteraste de nosotros?</label>
+            <select id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" required class="validate">
+              <option value="Banner o Manta">Banner o Manta</option>
+              <option value="Búsqueda en Google">Búsqueda en Google</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Otro">Otro</option>
+              <option value="Por medio de un amigo o familiar">Por medio de un amigo o familiar</option>
+              <option value="Radio">Radio</option>
+              <option value="Television">Television</option>
+              <option value="Volante o flyer">Volante o flyer</option>
+              <option value="YouTube">YouTube</option>
+              <option value="Worqui">Worqui</option>
+            </select>
           </div>
           <div class="input-field">
             <input id="MigrationProcess" name="MigrationProcess" type="text" class="validate" required maxlength="1">
