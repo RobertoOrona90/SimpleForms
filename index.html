@@ -22,7 +22,7 @@
     });
 
     function convertToUTC(controlName) {
-      const localDate = new Date(document.getElementById('localDate').value);
+      const localDate = new Date(document.getElementById(controlName).value);
       const utcDate = localDate.toUTCString();
       alert('Fecha y hora en UTC: ' + utcDate);
     }
@@ -62,78 +62,98 @@
 <body>
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
-  <h1>Test</h1>
-  <div style="padding: 4%;">
-
+  <div style="padding-top: 1%;padding-left: 8%;padding-right: 8%;">
+    <h1>Registro del Estudiante</h1>
     <div class="w3-card-4">
       <form action="test.php">
         <div class="w3-container">
-          <div class="input-field">
-            <input id="FirstName" name="FirstName" type="text" class="validate" required>
-            <label for="FirstName" maxlength="255">First Name</label>
-          </div>
-          <div class="input-field">
-            <input id="MiddleName" name="MiddleName" type="text" class="validate" required>
-            <label for="MiddleName" maxlength="255">Middle Name</label>
+          <div>
+            <div class="input-field">
+              <input id="FirstName" name="FirstName" type="text" class="validate" required>
+              <label for="FirstName" maxlength="255">Primer Nombre</label>
+            </div>
+            <div class="input-field">
+              <input id="MiddleName" name="MiddleName" type="text" class="validate" required>
+              <label for="MiddleName" maxlength="255">Segundo Nombre</label>
+            </div>
           </div>
           <div class="input-field">
             <input id="LastName" name="LastName" type="text" class="validate" required>
-            <label for="LastName" maxlength="255">Middle Name</label>
+            <label for="LastName" maxlength="255">Apellidos(s)</label>
           </div>
-          <div class="input-field">
-            <input id="Email" name="Email" type="email" class="validate" required maxlength="255"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <label for="Email">Email</label>
+          <div>
+            <div class="input-field">
+              <input id="Email" name="Email" type="email" class="validate" required maxlength="255"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              <label for="Email">Correo electrónico</label>
+            </div>
+            <div class="input-field">
+              <input id="DateOfBith" name="DateOfBith" type="date" class="validate" required>
+              <label for="DateOfBith">Fecha de nacimiento</label>
+            </div>
+            <!-- <input type="button" onclick="convertToUTC('DateOfBith')" value="test"> -->
           </div>
-          <div class="input-field">
-            <input id="PhoneNumber" name="PhoneNumber" type="text" class="validate" pattern="[0-9]{10}" required>
-            <label for="PhoneNumber">PhoneNumber</label>
-          </div>
-          <div class="input-field">
-            <input id="PhoneNumber2" name="PhoneNumber2" type="text" class="validate" pattern="[0-9]{10}" required>
-            <label for="PhoneNumber2">PhoneNumber2</label>
+          <div>
+            <div class="input-field">
+              <input id="PhoneNumber" name="PhoneNumber" type="text" class="validate" pattern="[0-9]{10}" required>
+              <label for="PhoneNumber">Número de teléfono celular</label>
+            </div>
+            <div class="input-field">
+              <input id="PhoneNumber2" name="PhoneNumber2" type="text" class="validate" pattern="[0-9]{10}" required>
+              <label for="PhoneNumber2">Segundo Número de teléfono celular</label>
+            </div>
           </div>
           <div class="input-field">
             <input id="Address" name="Address" type="text" class="validate" required maxlength="500">
-            <label for="Address">Address</label>
+            <label for="Address">Calle y número</label>
+          </div>
+          <div>
+            <div class="input-field">
+              <input id="City" name="City" type="text" class="validate" required maxlength="500">
+              <label for="City">Ciudad</label>
+            </div>
+            <div class="input-field">
+              <input id="State" name="State" type="text" class="validate" required maxlength="500">
+              <label for="State">Estado</label>
+            </div>
+          </div>
+          <div>
+            <div class="input-field">
+              <input id="ZipCode" name="ZipCode" type="number" class="validate" required maxlength="10">
+              <label for="ZipCode">ZipCode</label>
+            </div>
+            <div class="input-field">
+              <input id="Country" name="Country" type="text" class="validate" required maxlength="45">
+              <label for="Country">País</label>
+            </div>
           </div>
           <div class="input-field">
-            <input id="City" name="City" type="text" class="validate" required maxlength="500">
-            <label for="City">City</label>
+            <select name="Sex" id="Sex" required>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <label for="Sex">Sexo</label>
           </div>
           <div class="input-field">
-            <input id="State" name="State" type="text" class="validate" required maxlength="500">
-            <label for="State">State</label>
-          </div>
-          <div class="input-field">
-            <input id="ZipCode" name="ZipCode" type="text" class="validate" required maxlength="10">
-            <label for="ZipCode">ZipCode</label>
-          </div>
-          <div class="input-field">
-            <input id="Country" name="Country" type="text" class="validate" required maxlength="45">
-            <label for="Country">Country</label>
-          </div>
-          <div class="input-field">
-            <input id="DateOfBith" name="DateOfBith" type="text" class="validate" required>
-            <label for="DateOfBith">DateOfBith</label>
-          </div>
-          <div class="input-field">
-            <input id="Sex" name="Sex" type="text" class="validate" required maxlength="50">
-            <label for="Sex">Sex</label>
-          </div>
-          <div class="input-field">
-            <input id="Ethnicity" name="Ethnicity" type="text" class="validate" required maxlength="50">
-            <label for="Ethnicity">Ethnicity</label>
-          </div>
-          <div class="input-field">
-            <input id="HighestSchoolGrade" name="HighestSchoolGrade" type="text" class="validate" required
-              maxlength="50">
-            <label for="HighestSchoolGrade">HighestSchoolGrade</label>
+            <select name="HighestSchoolGrade" id="HighestSchoolGrade" required>
+              <option value="Primaria">Primaria</option>
+              <option value="Secundaria">Secundaria</option>
+              <option value="Preparatoria/Bachillerato (No terminado)">Preparatoria/Bachillerato (No terminado)</option>
+              <option value="Preparatoria/Bachillerato (Terminado)">Preparatoria/Bachillerato (Terminado)</option>
+              <option value="Algo de educación superior">Algo de educación superior</option>
+              <option value="Carrera técnica terminada">Carrera técnica terminada</option>
+              <option value="Universidad no terminada">Universidad no terminada</option>
+              <option value="Licenciatura/Ingeniería">Licenciatura/Ingeniería</option>
+              <option value="Maestría">Maestría</option>
+              <option value="Doctorado">Doctorado</option>
+            </select>
+            <label for="HighestSchoolGrade">Máximo grado de estudios</label>
           </div>
           <div class="input-field">
             <input id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" type="text" class="validate" required
               maxlength="50">
-            <label for="HowDidYouHearAboutUs">HowDidYouHearAboutUs</label>
+            <label for="HowDidYouHearAboutUs">¿Cómo te enteraste de nosotros?</label>
           </div>
           <div class="input-field">
             <input id="MigrationProcess" name="MigrationProcess" type="text" class="validate" required maxlength="1">
