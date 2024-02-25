@@ -29,6 +29,25 @@
 
   </script>
   <style>
+    @media only screen and (min-width : 901px) {
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .custom-control {
+        width: 30%;
+      }
+    }
+
+    /* Cuando la pantalla es menor a 900px  (tablets y teléfonos inteligentes)*/
+    @media only screen and (max-width : 900px) {
+      .custom-control {
+        width: 100%;
+      }
+    }
+
     .w3-card,
     .w3-card-2 {
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
@@ -67,38 +86,47 @@
     <div class="w3-card-4">
       <form action="test.php">
         <div class="w3-container">
-          <div>
-            <div class="input-field">
+          <div class="flex-row">
+            <div class="input-field custom-control">
               <input id="FirstName" name="FirstName" type="text" class="validate" required>
               <label for="FirstName" maxlength="255">Primer Nombre</label>
             </div>
-            <div class="input-field">
+            <div class="input-field custom-control">
               <input id="MiddleName" name="MiddleName" type="text" class="validate" required>
               <label for="MiddleName" maxlength="255">Segundo Nombre</label>
             </div>
+            <div class="input-field custom-control">
+              <input id="LastName" name="LastName" type="text" class="validate" required>
+              <label for="LastName" maxlength="255">Apellidos(s)</label>
+            </div>
           </div>
-          <div class="input-field">
-            <input id="LastName" name="LastName" type="text" class="validate" required>
-            <label for="LastName" maxlength="255">Apellidos(s)</label>
-          </div>
-          <div>
-            <div class="input-field">
+          <div class="flex-row">
+            <div class="input-field custom-control">
               <input id="Email" name="Email" type="email" class="validate" required maxlength="255"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
               <label for="Email">Correo electrónico</label>
             </div>
             <div class="input-field">
+              <select name="Sex" id="Sex" class="validate" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <label for="Sex">Sexo</label>
+
+            </div>
+            <div class="input-field custom-control">
               <input id="DateOfBith" name="DateOfBith" type="date" class="validate" required>
               <label for="DateOfBith">Fecha de nacimiento</label>
             </div>
             <!-- <input type="button" onclick="convertToUTC('DateOfBith')" value="test"> -->
           </div>
-          <div>
-            <div class="input-field">
+          <div class="flex-row">
+            <div class="input-field custom-control">
               <input id="PhoneNumber" name="PhoneNumber" type="text" class="validate" pattern="[0-9]{10}" required>
               <label for="PhoneNumber">Número de teléfono celular</label>
             </div>
-            <div class="input-field">
+            <div class="input-field custom-control">
               <input id="PhoneNumber2" name="PhoneNumber2" type="text" class="validate" pattern="[0-9]{10}">
               <label for="PhoneNumber2">Número de teléfono fijo (opcional)</label>
             </div>
@@ -107,76 +135,71 @@
             <input id="Address" name="Address" type="text" class="validate" required maxlength="500">
             <label for="Address">Calle y número</label>
           </div>
-          <div>
-            <div class="input-field">
+          <div class="flex-row">
+            <div class="input-field custom-control">
               <input id="City" name="City" type="text" class="validate" required maxlength="500">
               <label for="City">Ciudad</label>
             </div>
-            <div class="input-field">
+            <div class="input-field custom-control">
               <input id="State" name="State" type="text" class="validate" required maxlength="500">
               <label for="State">Estado</label>
             </div>
-          </div>
-          <div>
-            <div class="input-field">
+            <div class="input-field custom-control">
               <input id="ZipCode" name="ZipCode" type="number" class="validate" required maxlength="10">
-              <label for="ZipCode">ZipCode</label>
+              <label for="ZipCode">Código Postal</label>
             </div>
-            <div class="input-field">
+          </div>
+          <div class="flex-row">
+            <div class="input-field custom-control">
               <input id="Country" name="Country" type="text" class="validate" required maxlength="45">
               <label for="Country">País</label>
             </div>
+            <div class="input-field custom-control">
+              <select name="HighestSchoolGrade" id="HighestSchoolGrade" class="validate" required>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+                <option value="Preparatoria/Bachillerato (No terminado)">Preparatoria/Bachillerato (No terminado)
+                </option>
+                <option value="Preparatoria/Bachillerato (Terminado)">Preparatoria/Bachillerato (Terminado)</option>
+                <option value="Algo de educación superior">Algo de educación superior</option>
+                <option value="Carrera técnica terminada">Carrera técnica terminada</option>
+                <option value="Universidad no terminada">Universidad no terminada</option>
+                <option value="Licenciatura/Ingeniería">Licenciatura/Ingeniería</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+              </select>
+              <label for="HighestSchoolGrade">Máximo grado de estudios</label>
+            </div>
           </div>
-          <label for="Sex">Sexo</label>
-          <div class="input-field">
-            <select name="Sex" id="Sex" class="validate" required>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-              <option value="Otro">Otro</option>
-            </select>
-          </div>
-          <label for="HighestSchoolGrade">Máximo grado de estudios</label>
-          <div class="input-field">
-            <select name="HighestSchoolGrade" id="HighestSchoolGrade" class="validate" required>
-              <option value="Primaria">Primaria</option>
-              <option value="Secundaria">Secundaria</option>
-              <option value="Preparatoria/Bachillerato (No terminado)">Preparatoria/Bachillerato (No terminado)</option>
-              <option value="Preparatoria/Bachillerato (Terminado)">Preparatoria/Bachillerato (Terminado)</option>
-              <option value="Algo de educación superior">Algo de educación superior</option>
-              <option value="Carrera técnica terminada">Carrera técnica terminada</option>
-              <option value="Universidad no terminada">Universidad no terminada</option>
-              <option value="Licenciatura/Ingeniería">Licenciatura/Ingeniería</option>
-              <option value="Maestría">Maestría</option>
-              <option value="Doctorado">Doctorado</option>
-            </select>
-          </div>
-          <label for="HowDidYouHearAboutUs">¿Cómo te enteraste de nosotros?</label>
-          <div class="input-field">
-            <select id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" required class="validate">
-              <option value="Banner o Manta">Banner o Manta</option>
-              <option value="Búsqueda en Google">Búsqueda en Google</option>
-              <option value="Facebook">Facebook</option>
-              <option value="Instagram">Instagram</option>
-              <option value="Otro">Otro</option>
-              <option value="Por medio de un amigo o familiar">Por medio de un amigo o familiar</option>
-              <option value="Radio">Radio</option>
-              <option value="Television">Television</option>
-              <option value="Volante o flyer">Volante o flyer</option>
-              <option value="YouTube">YouTube</option>
-              <option value="Worqui">Worqui</option>
-            </select>
-          </div>
-          <label for="MigrationProcess">¿Necesitas tus clases como parte de tu proceso de DACA u otro trámite
-            migratorio?</label>
-          <div class="input-field">
-            <select name="MigrationProcess" id="MigrationProcess" class="validate" required>
-              <option value="Si">Si</option>
-              <option value="No">No</option>
-            </select>
-          </div>
-          <div class="input-field">
-            <input id="AdmissionDate" name="AdmissionDate" type="text" class="validate" required>
-            <label for="AdmissionDate">AdmissionDate</label>
+          <div class="flex-row">
+            <div class="input-field custom-control">
+              <select id="HowDidYouHearAboutUs" name="HowDidYouHearAboutUs" required class="validate">
+                <option value="Banner o Manta">Banner o Manta</option>
+                <option value="Búsqueda en Google">Búsqueda en Google</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Otro">Otro</option>
+                <option value="Por medio de un amigo o familiar">Por medio de un amigo o familiar</option>
+                <option value="Radio">Radio</option>
+                <option value="Television">Television</option>
+                <option value="Volante o flyer">Volante o flyer</option>
+                <option value="YouTube">YouTube</option>
+                <option value="Worqui">Worqui</option>
+              </select>
+              <label for="HowDidYouHearAboutUs">¿Cómo te enteraste de nosotros?</label>
+            </div>
+            <div class="input-field custom-control">
+              <select name="MigrationProcess" id="MigrationProcess" class="validate" required>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+              </select>
+              <label for="MigrationProcess">¿Necesitas tus clases como parte de tu proceso de DACA u otro trámite
+                migratorio?</label>
+            </div>
+            <div class="input-field custom-control">
+              <input id="AdmissionDate" name="AdmissionDate" type="text" class="validate" readonly>
+              <label for="AdmissionDate">Fecha de Admisión</label>
+            </div>
           </div>
           <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
@@ -186,4 +209,5 @@
     </div>
   </div>
 </body>
+
 </html>
